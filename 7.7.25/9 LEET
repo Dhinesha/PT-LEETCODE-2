@@ -1,0 +1,27 @@
+import java.util.Scanner;
+class Solution {
+    public boolean isPalindrome(int no) {
+        int rev=0;
+        int or=no;
+        while(no!=0){
+            rev=rev*10+no%10;
+            no/=10;
+        }
+        if(or==rev && or>=0){
+            return true;
+        }
+        else if(or!=0 && or<0){
+            return false;
+        }
+        return false;  
+    }
+}
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner (System.in);
+        int no=sc.nextInt();
+        Solution l=new Solution();
+        boolean d=l.isPalindrome(no);
+        System.out.println(d);
+    }
+}
