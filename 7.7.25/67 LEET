@@ -1,0 +1,31 @@
+class Solution {
+    public String addBinary(String l, String d) {
+        StringBuilder res =new StringBuilder();
+        int i =l.length() -1;
+        int j =d.length() -1;
+        int car=0;
+        while(i>= 0 || j>= 0 || car !=0 ){
+            int sum=car;
+            if(i>=0){
+                sum += l.charAt(i) -'0';
+                i--;
+            }
+            if(j>=0){
+                sum += d.charAt(j) -'0';
+                j--;
+            }
+            res.append(sum %2);
+            car=sum/2;
+        }
+        return res.reverse().toString();
+    }
+}
+
+
+first create a stingbuilder we can easyily modify and create a string and ealsiy to append and add constraints easily.
+check the string lenth in reverse,and declare the carry number
+give the condition-i,j,and carry element-
+sum number can store in the carry ;
+give the condition as i and j-if it check to add in that given string,
+after than we use the neumarator as (sum%2)=gives a rem and denominator as (sum/2)=gives a quotient
+and return the result as the reverse form.
